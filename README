@@ -1,0 +1,56 @@
+
+
+                                Tektonica::JOT
+       
+                A Perl 5 module for parsing the JOT specification 
+                     for Ink Storage and Interchange format
+
+
+                            Johan Van den Brande
+                           johan@vandenbrande.com
+
+INTRODUCTION
+
+    JOT is a specification for ink storage. JOT was the proposed standard to
+    use when a browser implements the scribble input field ( *<input
+    type="scribble">* ). The JOT specification did not make it into the
+    definitive HTML3 spec, but you can still find some references to it in
+    the proposed HTML3 standard from the W3C.
+
+    The only broser I'm aware of that implements this format is Xmosaic.
+
+    Because JOT is a lightweight format, it is very interesting to use it on
+    small devices like a PDA. The Avantgo browser for the PalmPilot
+    implements the scribble input tag.
+
+    JOT is also interesting because it stores an image as a 2D vector format
+    with timely information. It does not only record the coordinates of the
+    lines that a person draws on a tablet, but also records the speed,
+    pressure, etc .... of the pen on the tablet. This can come handy in
+    recognizing signatures or handwrite recognition.
+
+INSTALLATION
+
+	To use the accompanying module JOT::GD you will need to have the
+	GD library from Lincoln D. Stein. For the rest this duo is not so
+	greedy concerning modules it depends on.
+
+IDEAS
+
+	You can use this module to integrate in your avantgo apps, to implement
+	signature capturing and processing in a subsequent server side script.
+	
+
+COMPATIBILITY
+    This implementation only supports INK_BUNDLE_RECORD, INK_PENDATA_RECORD
+    and INK_END_RECORD. It also does not use any of the Bundle Flags and
+    assumes a compaction type of 1. This is sufficient to parse the Avantgo
+    implementation of JOT.
+
+AUTHOR AND COPYRIGHT
+    Johan Van den Brande <johan@vandenbrande.com>,
+    http://www.vandenbrande.com/
+
+    Copyright (c) 2000-2001 Johan Van den Brande. All rights reserved. This
+    program is free software; you can redistribute it and/or modify it under
+    the terms of the Artistic License, distributed with Perl.
